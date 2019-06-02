@@ -1,0 +1,59 @@
+﻿<Page
+    x:Class="EntityFrameworkCOre.MainPage"
+    xmlns:appy="using:Telerik.UI.Xaml.Controls.Grid"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EntityFrameworkCOre"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <StackPanel>
+            <TextBlock x:Name="TP1" Text="DETAILS" Style="{StaticResource HeaderTextBlockStyle}"></TextBlock>
+            <appy:RadDataGrid x:Name="maingrid" Height="600" AutoGenerateColumns="False" ItemsSource="{Binding}" UserEditMode="Inline">
+                <appy:RadDataGrid.Columns>
+                    <appy:DataGridImageColumn Header="BadFace" PropertyName="BadFace"></appy:DataGridImageColumn>
+                    <appy:DataGridTextColumn Header="StudentName" PropertyName="StudentName"></appy:DataGridTextColumn>
+                    <appy:DataGridNumericalColumn Header="StudentID" PropertyName="StudentId"></appy:DataGridNumericalColumn>
+                </appy:RadDataGrid.Columns>
+            </appy:RadDataGrid>
+         
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="Se" Style="{StaticResource AccentButtonStyle}">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock x:Name="Tanpu" Text="Load" HorizontalAlignment="Stretch" Height="20" Margin="0,0,0,0" VerticalAlignment="Bottom"></TextBlock>
+                            <SymbolIcon Symbol="Refresh"></SymbolIcon>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <TextBlock x:Name="Tapu1" Foreground="Green"></TextBlock>
+                <ProgressRing x:Name="Protu1" Foreground="Green" IsActive="False"></ProgressRing>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Background="#51DB4E">
+                <TextBox x:Name="FNAME" PlaceholderText="Student Name"></TextBox>
+                <AppBarSeparator></AppBarSeparator>
+                <TextBox x:Name="ID" PlaceholderText="ID"></TextBox>
+                <AppBarSeparator></AppBarSeparator>
+                <Button x:Name="FILLU1">
+                    <Button.Content>
+                        <SymbolIcon Symbol="OtherUser"></SymbolIcon>
+                    </Button.Content>
+                </Button>
+                <TextBlock x:Name="TANTU1" Foreground="Green">Upload Picture</TextBlock>
+                <AppBarSeparator>
+                    
+                </AppBarSeparator>
+                <Button x:Name="Sendy" Content="Add" Style="{StaticResource AccentButtonStyle}"></Button>
+                <AppBarSeparator></AppBarSeparator>
+                <Button x:Name="AI" Style="{StaticResource AccentButtonStyle}" Content="USE AI"></Button>
+                <AppBarSeparator></AppBarSeparator>
+                <TextBlock x:Name="AIRESult" Foreground="Green"></TextBlock>
+            </StackPanel>
+           
+    
+        </StackPanel>
+    </Grid>
+</Page>
